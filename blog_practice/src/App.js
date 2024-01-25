@@ -2,22 +2,20 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  let post = '강남 우동 맛집';
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="black-nav">
+        {' '}
+        {/* jsx에서 class를 넣을 땐 className을 사용 */}
+        {/* jsx에서 style을 넣을 땐 style={{이름 : '값'}}을 사용 */}
+        <h4 style={{ color: 'red', fontSize: '16px' }}> 블로그입니다 </h4>
+      </div>
+      <h4>
+        {post}
+        {/* jsx에서 변수를 넣을 땐 중괄호를 사용*/}
+      </h4>
     </div>
   );
 }
