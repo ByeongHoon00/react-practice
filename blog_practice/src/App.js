@@ -6,10 +6,16 @@ function App() {
   let post = '강남 우동 맛집';
   // 일반 변수는 변경되면 html에 자동으로 반영되지 않기 때문에 state사용
   // state 만드는 법 : 1. import { useState } 2. useState(보관할 자료) 3. let[작명, 작명]
-  let [a, b] = useState('남자 코트 추천');
+  let [a1, b1] = useState('남자 코트 추천');
+  let [a2, b2] = useState('남자 코트 추천');
+  let [a3, b3] = useState('남자 코트 추천');
   let [logo, setLogo] = useState('ReactBlog');
+  let [좋아요, 좋아요변경] = useState(0);
   // a는 state에 보관했던 자료가 나옴, b는 state 변경을 도와주는 함수
 
+  function 함수() {
+    좋아요변경(좋아요 + 1);
+  }
   // return()안에는 병렬로 태그 2개 이상 기입금지
   return (
     <div className="App">
@@ -20,7 +26,20 @@ function App() {
         <h4 style={{ color: 'red', fontSize: '16px' }}> {logo} </h4>
       </div>
       <div className="list">
-        <h4>{a}</h4>
+        <h4>
+          {a1}
+          {/* onClick={함수}를 이용해 버튼을 생성 가능*/}
+          <span onClick={함수}>👍</span>
+          {좋아요}
+        </h4>
+        <p>2월 17일 발행</p>
+      </div>
+      <div className="list">
+        <h4>{a2}</h4>
+        <p>2월 17일 발행</p>
+      </div>
+      <div className="list">
+        <h4>{a3}</h4>
         <p>2월 17일 발행</p>
       </div>
       <h4>
