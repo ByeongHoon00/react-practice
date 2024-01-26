@@ -6,9 +6,14 @@ function App() {
   let post = '강남 우동 맛집';
   // 일반 변수는 변경되면 html에 자동으로 반영되지 않기 때문에 state사용
   // state 만드는 법 : 1. import { useState } 2. useState(보관할 자료) 3. let[작명, 작명]
-  let [a1, b1] = useState('남자 코트 추천');
-  let [a2, b2] = useState('남자 코트 추천');
-  let [a3, b3] = useState('남자 코트 추천');
+  // let [a1, b1] = useState('남자 코트 추천');
+  // let [a2, b2] = useState('남자 코트 추천');
+  // let [a3, b3] = useState('남자 코트 추천');
+  let [글제목, 글제목변경] = useState([
+    '남자 코트 추천',
+    '강남 우동 맛집',
+    '독학',
+  ]);
   let [logo, setLogo] = useState('ReactBlog');
   let [좋아요, 좋아요변경] = useState(0);
   // a는 state에 보관했던 자료가 나옴, b는 state 변경을 도와주는 함수
@@ -16,6 +21,7 @@ function App() {
   function 함수() {
     좋아요변경(좋아요 + 1);
   }
+
   // return()안에는 병렬로 태그 2개 이상 기입금지
   return (
     <div className="App">
@@ -25,9 +31,20 @@ function App() {
         {/* jsx에서 style을 넣을 땐 style={{이름 : '값'}}을 사용 */}
         <h4 style={{ color: 'red', fontSize: '16px' }}> {logo} </h4>
       </div>
+      <button
+        onClick={() => {
+          //array/object는 다룰 때 원본을 보존하는게 좋음
+          //글제목변경(['여자 코트 추천', '강남 우동맛집', '독학']);
+          let copy = [...글제목];
+          copy[0] = '여자 코트 추천';
+          글제목변경(copy);
+        }}
+      >
+        글수정
+      </button>
       <div className="list">
         <h4>
-          {a1}
+          {글제목[0]}
           {/* onClick={함수}를 이용해 버튼을 생성 가능*/}
           <span onClick={함수}>👍</span>
           {좋아요}
@@ -35,11 +52,11 @@ function App() {
         <p>2월 17일 발행</p>
       </div>
       <div className="list">
-        <h4>{a2}</h4>
+        <h4>{글제목[1]}</h4>
         <p>2월 17일 발행</p>
       </div>
       <div className="list">
-        <h4>{a3}</h4>
+        <h4>{글제목[2]}</h4>
         <p>2월 17일 발행</p>
       </div>
       <h4>
