@@ -1,7 +1,7 @@
 # useState
 ---
 useState를 사용하기 위해서는 두 줄의 코드가 추가되어야한다.
-```
+```javascript
 import {useState} from 'react';
 let [a,b] = useState('보관할 자료');
 ```
@@ -13,7 +13,7 @@ a 변수에는 state에 보관했던 데이터가 들어가있고, b 변수에�
 
 ### useState 사용예제
 
-```
+```javascript
 let [logo, setLogo] = useState('ReactBlog');
 <h4> {logo} </h4>
 ```
