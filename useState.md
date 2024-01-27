@@ -15,5 +15,5 @@ a 변수에는 state에 보관했던 데이터가 들어가있고, b 변수에�
 let [logo, setLogo] = useState('ReactBlog');
 <h4> {logo} </h4>
 ```
-이를 사용하면 <h4> ReactBlog </h4>으로 렌더링 된다.
+이를 사용하면 ```<h4> ReactBlog </h4>```으로 렌더링 된다.
 이처럼 **useState**를 이용해 {중괄호}를 사용하면 원하는 곳에 **Data-binding**이 가능하다.
