@@ -33,6 +33,15 @@ function App() {
       </div>
       <button
         onClick={() => {
+          let copy2 = [...글제목];
+          copy2.sort();
+          글제목변경(copy2);
+        }}
+      >
+        가나다순정렬
+      </button>
+      <button
+        onClick={() => {
           //array/object는 다룰 때 원본을 보존하는게 좋음
           //글제목변경(['여자 코트 추천', '강남 우동맛집', '독학']);
           let copy = [...글제목];
@@ -63,7 +72,24 @@ function App() {
         {post}
         {/* jsx에서 변수를 넣을 땐 중괄호를 사용*/}
       </h4>
+      <Modal></Modal>
     </div>
+  );
+}
+
+// component 만드는 법 : 1. function을 만듬 2. return()안에 html을 담는다 3. <함수명></함수명>쓰기
+// component를 사용하면 좋은경우 : 1. 반복적인 html을 축약할 때 2. 큰 페이지 3. 자주변경되는 것들
+function Modal() {
+  return (
+    // 의미없는 <div>대신 <></>사용가능
+    <>
+      <div className="modal">
+        <h4>제목</h4>
+        <p>날짜</p>
+        <p>상세내용</p>
+      </div>
+      <div></div>
+    </>
   );
 }
 
