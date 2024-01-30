@@ -19,9 +19,9 @@ function App() {
   let [modal, modal함수] = useState(false);
   // a는 state에 보관했던 자료가 나옴, b는 state 변경을 도와주는 함수
 
-  // function 함수() {
-  //   좋아요변경(좋아요 + 1);
-  // }
+  function 함수() {
+    좋아요변경(좋아요 + 1);
+  }
   //return()안에는 병렬로 태그 2개 이상 기입금지
   return (
     <div className="App">
@@ -51,24 +51,24 @@ function App() {
       >
         글수정
       </button>
-      <Good title={글제목} 좋아요={좋아요} 좋아요변경={좋아요변경}></Good>
-      {/* <div className="list">
+      {/* <Good title={글제목} 좋아요={좋아요} 좋아요변경={좋아요변경}></Good> */}
+      <div className="list">
         <h4>
-          {글제목[0]} */}
-      {/* onClick={함수}를 이용해 버튼을 생성 가능*/}
-      {/* <span onClick={함수}>👍</span>
+          {글제목[0]}
+          {/* onClick={함수}를 이용해 버튼을 생성 가능*/}
+          <span onClick={함수}>👍</span>
           {좋아요}
         </h4>
         <p>2월 17일 발행</p>
-      </div> */}
-      {/* <div className="list">
+      </div>
+      <div className="list">
         <h4>{글제목[1]}</h4>
         <p>2월 17일 발행</p>
-      </div> */}
-      {/* <div className="list">
+      </div>
+      <div className="list">
         <h4>{글제목[2]}</h4>
         <p>2월 17일 발행</p>
-      </div> */}
+      </div>
       <h4>
         {post}
         {/* jsx에서 변수를 넣을 땐 중괄호를 사용*/}
@@ -155,6 +155,6 @@ function Modal(props) {
 //       </div>
 //     );
 //   });
-}
+//}
 
 export default App;
