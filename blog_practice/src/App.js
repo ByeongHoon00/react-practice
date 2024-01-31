@@ -17,6 +17,7 @@ function App() {
   let [logo, setLogo] = useState('ReactBlog');
   let [좋아요, 좋아요변경] = useState([0, 0, 0]);
   let [modal, modal함수] = useState(false);
+  let [입력값, 입력값변경] = useState('');
   // a는 state에 보관했던 자료가 나옴, b는 state 변경을 도와주는 함수
 
   function 함수() {
@@ -81,6 +82,21 @@ function App() {
         열고닫는버튼
       </button>
       {modal === true ? <Modal 글={글제목}></Modal> : null}
+      <p></p>
+      <input
+        onChange={(e) => {
+          입력값변경(e.target.value);
+        }}
+      ></input>
+      <button
+        onClick={() => {
+          let newtitlelist = [...글제목];
+          newtitlelist.push(입력값);
+          글제목변경(newtitlelist);
+        }}
+      >
+        게시물추가
+      </button>
     </div>
   );
 }
