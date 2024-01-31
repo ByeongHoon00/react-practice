@@ -15,7 +15,7 @@ function App() {
     '독학',
   ]);
   let [logo, setLogo] = useState('ReactBlog');
-  let [좋아요, 좋아요변경] = useState(0);
+  let [좋아요, 좋아요변경] = useState([0, 0, 0]);
   let [modal, modal함수] = useState(false);
   // a는 state에 보관했던 자료가 나옴, b는 state 변경을 도와주는 함수
 
@@ -51,24 +51,24 @@ function App() {
       >
         글수정
       </button>
-      {/* <Good title={글제목} 좋아요={좋아요} 좋아요변경={좋아요변경}></Good> */}
-      <div className="list">
+      <Good title={글제목} 좋아요={좋아요} 좋아요변경={좋아요변경}></Good>
+      {/* <div className="list">
         <h4>
-          {글제목[0]}
-          {/* onClick={함수}를 이용해 버튼을 생성 가능*/}
-          <span onClick={함수}>👍</span>
+          {글제목[0]} */}
+      {/* onClick={함수}를 이용해 버튼을 생성 가능*/}
+      {/* <span onClick={함수}>👍</span>
           {좋아요}
         </h4>
         <p>2월 17일 발행</p>
-      </div>
-      <div className="list">
+      </div> */}
+      {/* <div className="list">
         <h4>{글제목[1]}</h4>
         <p>2월 17일 발행</p>
-      </div>
-      <div className="list">
+      </div> */}
+      {/* <div className="list">
         <h4>{글제목[2]}</h4>
         <p>2월 17일 발행</p>
-      </div>
+      </div> */}
       <h4>
         {post}
         {/* jsx에서 변수를 넣을 땐 중괄호를 사용*/}
@@ -133,28 +133,28 @@ function Modal(props) {
   );
 }
 
-// function Good(props) {
-//   return props.title.map(function (titleName, i) {
-//     return (
-//       <div className="list">
-//         <h4>
-//           {titleName}
-//           <span
-//             key={i}
-//             onClick={() => {
-//               let copyCount = [...props.좋아요]; // 원본 배열을 복사해서
-//               copyCount[i]++; // 복사 배열의 값 수정
-//               props.좋아요변경(copyCount); // (값을 수정한) 복사 배열로 변경
-//             }}
-//           >
-//             👍
-//           </span>
-//           {props.좋아요[i]}
-//         </h4>
-//         <p>date</p>
-//       </div>
-//     );
-//   });
-//}
+function Good(props) {
+  return props.title.map(function (titleName, i) {
+    return (
+      <div className="list">
+        <h4>
+          {titleName}
+          <span
+            key={i}
+            onClick={() => {
+              let copyCount = [...props.좋아요]; // 원본 배열을 복사해서
+              copyCount[i]++; // 복사 배열의 값 수정
+              props.좋아요변경(copyCount); // (값을 수정한) 복사 배열로 변경
+            }}
+          >
+            👍
+          </span>
+          {props.좋아요[i]}
+        </h4>
+        <p>date</p>
+      </div>
+    );
+  });
+}
 
 export default App;
