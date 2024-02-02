@@ -93,6 +93,9 @@ function App() {
           let newtitlelist = [...글제목];
           newtitlelist.push(입력값);
           글제목변경(newtitlelist);
+          let 좋아요추가 = [...좋아요];
+          좋아요추가.push(0);
+          좋아요변경(좋아요추가);
         }}
       >
         게시물추가
